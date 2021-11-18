@@ -20,14 +20,14 @@ after_success:
   - docker push g051/multi-nginx
   - docker push g051/multi-server
   - docker push g051/multi-worker
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "ap-southeast-1"
-#   app: "docker-react"
-#   env: "Dockerreact-env"
-#   bucket_name: "elasticbeanstalk-ap-southeast-1-969768766207"
-#   bucket_path: "docker-react"
-#   on:
-#     branch: main
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: ap-southeast-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-ap-southeast-1-969768766207
+  bucket_path: docker-multi
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
